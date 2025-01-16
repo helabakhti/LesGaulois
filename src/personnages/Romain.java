@@ -21,9 +21,6 @@ public class Romain {
 		force -= forceCoup;
 		if (force < 0) {
 			force = 0;
-		}
-
-		if (force > 0) {
 			System.out.println("Le romain " + nom + " :  Aie ! ");
 		} else {
 			System.out.println("Le romain " + nom + " :  J'abandonne...");

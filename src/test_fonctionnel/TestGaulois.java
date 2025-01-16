@@ -20,7 +20,6 @@ public class TestGaulois {
 		romain.parler("UN GAU… UN GAUGAU… »");
 		for (int i = 0; i < 2; i++) {
 			asterix.frapper(romain);
-			romain.recevoirCoup(3);
 		}
 		
 	}
