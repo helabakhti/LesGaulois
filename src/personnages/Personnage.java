@@ -31,12 +31,12 @@ public abstract class Personnage {
 	}
 
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom() + ".");
+		System.out.println(donnerAuteur() +nom + " envoie un grand coup dans la mâchoire de " + romain.getNom() + ".");
 		romain.recevoirCoup(force / 3);
 	}
 	
 	public void frapper(Gaulois gaulois) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + gaulois.getNom() + ".");
+		System.out.println(donnerAuteur() +nom + " envoie un grand coup dans la mâchoire de " + gaulois.getNom() + ".");
 		gaulois.recevoirCoup(force / 3);
 	}
 
