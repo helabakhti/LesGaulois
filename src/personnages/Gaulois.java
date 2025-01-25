@@ -9,6 +9,10 @@ public class Gaulois extends Personnage {
 	public String donnerAuteur() {
 		return "Gaulois";
 	}
+	  @Override
+	    public String toString() {
+	        return nom;
+	    }
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix", 8);
