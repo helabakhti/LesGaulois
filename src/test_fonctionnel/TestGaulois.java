@@ -1,57 +1,49 @@
 package test_fonctionnel;
 
+import personnages.Druide;
+import personnages.Equipement;
 import personnages.Gaulois;
-import personnages.Romain;
 import personnages.Soldat;
-import sites.Village;
+import personnages.Soldat.Grade;
 
 public class TestGaulois {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
+      
+        Druide Panoramix = new Druide("Panoramix", 5);
+        Gaulois asterix = new Gaulois("Astérix", 5);
 
-		// Gaulois vercingetorix = new Gaulois("Vercingetorix", 5);
-		// Village village = new Village(vercingetorix);
-		// System.out.println(vercingetorix.getNom());
-		// vercingetorix.parler("Je suis un grand guerrier et je vais creer mon
-		// village");
+        Soldat romain = new Soldat("Minus", 6, Grade.CENTURION);
+       
+        System.out.println("Le soldat Minus s'équipe avec un bouclier.");
+        romain.equiper(Equipement.BOUCLIER);
+        
+        System.out.println("Le soldat Minus s'équipe avec un casque.");
+        romain.equiper(Equipement.CASQUE);
+        
+        System.out.println("Le soldat Minus s'équipe avec un plastron.");
+        romain.equiper(Equipement.PLASTRON);
 
-		// Romain romain = new Romain("Minus", 2);
-		// romain.parler("Je suis en charge de créer un nouveau camp romain");
+    
+        Panoramix.fabriquerPotionMagique();
+        asterix.boirePotionMagique(Panoramix.getPuissancePotion());
 
-		//Gaulois agecanonix = new Gaulois("Agecanonix", 1);
-		//Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
-		//Gaulois astérix = new Gaulois("Astérix ", 5);
-		//Gaulois obelix = new Gaulois("Obelix ", 15);
-		//Gaulois prolix = new Gaulois("Prolix ", 2);
+        Panoramix.parler("Tiens asterix un peu de potion magique");
+        Panoramix.parler("Non, Obélix Non !... Et tu le sais très bien !");
+        Panoramix.parler("Tiens Assurancetourix un peu de potion magique");
+        Panoramix.parler("Tiens Abraracourcix un peu de potion magique");
+        Panoramix.parler("Désolé Agecanonix il n'y a plus une seule goutte de potion");
 
-		//Soldat Brutus = new Soldat("Brutus", 5, Soldat.Grade.CENTURION);
-		//Brutus.parler("Je mets mon épée au service de Rome dans le camp dirigé par Minu");
+        asterix.parler("Bonjour à tous");
 
-		//Soldat Milexcus = new Soldat("Milexcus", 5, Soldat.Grade.CENTURION);
-		//Milexcus.parler("Je mets mon épée au service de Rome dans le camp dirigé par Minu");
+        romain.parler("UN GAU... UN GAUGAU...");
 
-		//Soldat Tullius = new Soldat("Tullius Octopus", 5, Soldat.Grade.CENTURION);
-		//Tullius.parler("Je mets mon épée au service de Rome dans le camp dirigé par \r\n" + "Minus");
+        while (!asterix.estATerre() && !romain.estATerre()) {
+            asterix.frapper(romain);  
+            if (romain.estATerre()) {
+                break;
+            }
+        }
 
-		//Romain romain = new Romain("Minus", 2);
-		//romain.parler("Désolé Ballondebaudrus notre camp est complet ! »");
-
-		Gaulois vercingetorix = new Gaulois("Vercingetorix", 5);
-		vercingetorix.parler("Je laisse mon grand bouclier au grand Abraracourcix");
-		//vercingetorix.parler("Bienvenue Agecanonix ! ");
-		//vercingetorix.parler("Bienvenue Assurancetourix ! ");
-		//vercingetorix.parler("Bienvenue asterix ! ");
-		//vercingetorix.parler("Bienvenue obelix ! ");
-		//vercingetorix.parler("Désolé Prolix mon village est déjà bien rempli. ");
-		
-		Gaulois abraracourcix= new Gaulois("abraracourcix", 5);
-		abraracourcix.parler("Merci ! ");
-		Soldat Briseradius = new Soldat("Briseradius",4,Soldat.Grade.SOLDAT);
-		Briseradius.parler("Je ne suis pas suffisamment gradé pour prendre la direction du camp romain.");
-	
-		Soldat Chorus = new Soldat("Chorus",4,Soldat.Grade.CENTURION);
-		Chorus.parler("Moi Chorus je prends la direction du camp romain");
-
-	}
-
+}
 }
